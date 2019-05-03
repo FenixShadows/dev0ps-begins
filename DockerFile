@@ -1,0 +1,7 @@
+from python:3.6.3-slim
+label maintainer="Harrys <nsokebekeharrys7@gmail.com>"
+workdir /python_test_hello
+copy . /python_test_hello
+run pip --no-cache-dir install numpy pandas seaborn sklearn jupyter
+expose 8888
+cmd ["jupyter","notebook","--ip='*'","--port=8888","--no-browser", "--allow-root"]
